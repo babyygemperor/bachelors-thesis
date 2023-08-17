@@ -7,11 +7,11 @@ Mathematical formulas, integral to STEM papers, often present a challenge to rea
 The concept of grounding mathematical formulas, introduced by Asakura-san, offers a promising solution. By automating this process, we can significantly expedite the annotation process. This thesis adopts a predominantly data-driven approach to develop an automation tool, which will be realised through the following stages:
 
 \begin{enumerate}
-    \item \textbf{Detecting/Retrieving:} This phase entails the transformation of the LaTeX source into a machine-readable HTML/XML format using LaTeXML \cite{ginev2011latexml}.
+    \item \textbf{Detecting/Retrieving:} This phase entails the transformation of the \LaTeX \space source into a machine-readable HTML/XML format using \LaTeX ML \footnote{\url{https://math.nist.gov/~BMiller/LaTeXML/}} ~\parencite{ginev2011latexml}.
     
     \item \textbf{Dictionary Generation:} Leveraging \ac{LLMs}, short text clustering techniques will be employed to construct a comprehensive dictionary of all mathematical identifiers.
     
-    \item \textbf{Association of Each Occurrence:} This step will involve associating every instance of a mathematical identifier with its corresponding definition, drawing inspiration from MathAlign \cite{alexeeva2020mathalign}.
+    \item \textbf{Association of Each Occurrence:} This step will involve associating every instance of a mathematical identifier with its corresponding definition, drawing inspiration from MathAlign ~\parencite{alexeeva2020mathalign}.
 \end{enumerate}
 
 
@@ -38,7 +38,7 @@ In recent years, LLMs have shown immense promise in various NLP tasks. Their cap
 The primary objective of this research is to explore the feasibility and effectiveness of using LLMs for the automation of mathematical identifier annotations in scientific papers. To guide this investigation, the following research questions have been formulated:
 
 \begin{enumerate}
-    \item \textbf{Efficacy of LLMs:} How effective are LLMs, specifically GPT-3.5 and GPT-4 and some Open Source LLMs, in generating accurate annotations for mathematical identifiers compared to traditional manual methods?
+    \item \textbf{Efficacy of LLMs:} How effective are LLMs, specifically GPT-3.5 ~\parencite{openai2023} and GPT-4 ~\parencite{2303.08774} and some Open Source LLMs, in generating accurate annotations for mathematical identifiers compared to traditional manual methods?
     
     \item \textbf{Contextual Understanding:} To what extent can LLMs disambiguate mathematical identifiers based on context, given the inherent polysemy of these identifiers?
     
@@ -60,13 +60,13 @@ The journey of this research has led to several significant advancements in the 
 \begin{enumerate}
     \item \textbf{Integration with MioGatto:} Successfully incorporated GPT-based annotation capabilities into the MioGatto platform, enhancing its potential for automated paper annotations.
     
-    \item \textbf{Extensive Annotations:} Employed a range of LLMs, including GPT-3.5-turbo, GPT-3.5-turbo-16k, GPT-4, \href{https://huggingface.co/TheBloke/Vicuna-33B-1-3-SuperHOT-8K-GPTQ}{vicuna-33b}, and \href{https://huggingface.co/TheBloke/StableBeluga2-70B-GPTQ}{StableBeluga2}, to annotate a curated set of 40 scientific papers. This extensive annotation process serves as a comprehensive evaluation of the capabilities of these models.
+    \item \textbf{Extensive Annotations:} Employed a range of LLMs, including GPT-3.5-turbo, GPT-3.5-turbo-16k, GPT-4, \href{https://huggingface.co/TheBloke/Vicuna-33B-1-3-SuperHOT-8K-GPTQ}{vicuna-33b} ~\parencite{zheng2023judging} \footnote{\url{https://huggingface.co/TheBloke/Vicuna-33B-1-3-SuperHOT-8K-GPTQ}}, and \href{https://huggingface.co/TheBloke/StableBeluga2-70B-GPTQ}{StableBeluga2} ~\parencite{StableBelugaModels, touvron2023llama, mukherjee2023orca} \footnote{\url{https://huggingface.co/TheBloke/StableBeluga2-70B-GPTQ}}, to annotate a curated set of 40 scientific papers. This extensive annotation process serves as a comprehensive evaluation of the capabilities of these models.
     
-    \item \textbf{Performance Evaluation:} Conducted a thorough evaluation and analysis of the annotation performances of GPT, vicuna-33b, and StableBeluga2 LLMs, providing insights into their strengths and limitations.
+    \item \textbf{Performance Evaluation:} Conducted a thorough evaluation and analysis of the annotation performances of GPT, \href{https://huggingface.co/TheBloke/Vicuna-33B-1-3-SuperHOT-8K-GPTQ}{vicuna-33b}, and \href{https://huggingface.co/TheBloke/StableBeluga2-70B-GPTQ}{StableBeluga2} LLMs, providing insights into their strengths and limitations.
     
     \item \textbf{Ground Truth Annotation:} Personally annotated a subset of papers to establish a ground truth, ensuring a reliable benchmark for evaluating the automated annotations.
     
-    \item \textbf{CoNLL Score Approximation:} Developed a novel formula to approximate the expected CoNLL score of a paper when annotated using GPT, offering a predictive tool for assessing annotation quality.
+    \item \textbf{CoNLL Score Approximation:} Developed a novel formula to approximate the expected CoNLL ~\parencite{pradhan2012conll} score of a paper when annotated using GPT, offering a predictive tool for assessing annotation quality.
 \end{enumerate}
 
 These contributions not only advance the field of automated annotation but also lay the groundwork for future research endeavours in this domain.
@@ -92,4 +92,5 @@ This thesis is structured to provide a comprehensive understanding of the challe
 \end{enumerate}
 
 This structured approach ensures a logical flow, guiding readers from the foundational concepts to the conclusions, and offering a holistic understanding of the research journey.
+
 
