@@ -9,8 +9,8 @@
 
   \centering
 
-  \IfFileExists{logos/tum.png}{%
-    \includegraphics[height=20mm]{logos/tum.png}
+  \IfFileExists{logos/tum.pdf}{%
+    \includegraphics[height=20mm]{logos/tum.pdf}
   }{%
     \vspace*{20mm}
   }
@@ -21,17 +21,17 @@
   \vspace{5mm}
   {\large\MakeUppercase{\getUniversity{}} \par}
 
-  \vspace{15mm}
+  \vspace{20mm}
   {\Large \getDoctype{} in \getDegree{} \par}
 
-  \vspace{10mm}
+  \vspace{15mm}
   {\huge\bfseries \getTitle{} \par}
 
-  \vspace{10mm}
+  \vspace{15mm}
   {\LARGE \getAuthor{}}
 
-  \IfFileExists{logos/faculty-\fg.pdf}{%
+  \IfFileExists{logos/faculty.pdf}{%
     \vfill{}
-    \includegraphics[height=20mm]{logos/faculty-\fg.pdf}
+    \includegraphics[height=20mm]{logos/faculty.pdf}
   }{}
 \end{titlepage}
