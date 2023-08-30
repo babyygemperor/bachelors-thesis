@@ -7,15 +7,18 @@
 \usepackage[autostyle]{csquotes}
 \usepackage[%
   backend=biber,
-  url=false,
-  style=alphabetic,
-  maxnames=4,
-  minnames=3,
+  style=authoryear,
+  maxcitenames=1,
+  mincitenames=1,
   maxbibnames=99,
-  giveninits,
-  uniquename=init]{biblatex} % TODO: adapt citation style
+  giveninits=true,
+  uniquename=init,
+  natbib=true
+]{biblatex}
+
 \usepackage{graphicx}
 \usepackage{scrhack} % necessary for listings package
+\usepackage{xcolor}
 \usepackage{listings}
 \usepackage{lstautogobble}
 \usepackage{tikz}
@@ -34,6 +37,12 @@
 	}
 }
 \usepackage{ifthen}
+\usepackage{amsmath}
+\usepackage{subfig}
+\usepackage{hyperref}
+
+
+\lstset{showspaces=false}
 
 \addto\extrasamerican{
 	\def\lstnumberautorefname{Line}
@@ -99,4 +108,16 @@
   keywordstyle=\bfseries\color{TUMBlue},
   stringstyle=\color{TUMAccentGreen},
   captionpos=b
+}
+
+
+\lstset{showspaces=false}
+\lstset{showstringspaces=false}
+
+
+\lstset{
+  escapeinside={(*@}{@*)},
+  breaklines=true,
+  postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookrightarrow\space}},
+  literate={`}{{\textasciigrave}}1
 }
