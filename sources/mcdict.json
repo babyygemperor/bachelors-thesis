@@ -1,0 +1,23 @@
+{
+    "_author": String,
+    "_mcdict_version": String,
+    "concepts": {
+        ID: {
+            "_surface": {
+                "text": String,
+                "unicode_name": String
+            },
+            "identifiers": {
+                "default": [
+                    {
+                        "affixes": List,
+                        "arity": Integer,
+                        "description": String
+                    },
+                    ...
+                ]
+            }
+        },
+        ...
+    }
+}

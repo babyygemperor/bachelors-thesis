@@ -1,0 +1,11 @@
+{
+    "_anno_version": String,
+    "_annotator": String,
+    "mi_anno": {
+        ID: {
+            "concept_id": Integer,
+            "sog": List
+        },
+        ...
+    }
+}
