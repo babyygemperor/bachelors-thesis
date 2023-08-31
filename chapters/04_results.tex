@@ -81,6 +81,8 @@ Given the inherent stochastic nature of these models, some variation can be expe
   \label{tab:variance}
 \end{table}
 
+\subsection{Running Time and Costs}
+
 The cost and time efficiency of the employed models are critical to the feasibility of our automated approach. Tables \ref{tab:time} and \ref{tab:cost} respectively present the average time required and average cost incurred in annotating mathematical identifiers across GPT versions. The pricing is listed on the OpenAI website\footnote{\url{https://openai.com/pricing}}. While GPT-3.5 emerged as the fastest and most time-efficient model, the GPT-4 version manifested as the most costly to operate.
 
 \begin{table}[htpb]
@@ -185,7 +187,7 @@ For semantic accuracy, we excluded one paper (ArXiV ID: 2107.10832 \citep{single
 \subsection{Variance of Data}
 It was impossible to calculate the data variance due to the high costs of running the Open Source Models and budget constraints. However, preliminary testing during the model selection phase indicated that Open Source Models were considerably more stable than GPT.
 
-\subsection{Time and Cost Analysis}
+\subsection{Running Time and Costs}
 Given the distinctive operational requirements of open-source models, the computation of time and cost efficiencies differ from those of GPT models. Unlike GPT models, the cost for open-source models revolves around GPU runtime on the servers of \href{https://runpod.io}{runpod.io} and not token usage. Table \ref{tab:open-time} and \ref{tab:open-cost} represent these essential aspects. The pricing of GPT is listed on the OpenAI website\footnote{\url{https://openai.com/pricing}}. The cost of running vicuna-33b was 0.69USD/h, and StableBeluga2 was 1.84USD/h.
 
 \begin{table}[htpb]
