@@ -1,6 +1,6 @@
 \chapter{Introduction}\label{chapter:introduction}
 
-Mathematical formulas, integral to \ac{STEM} papers, often challenge readers due to the ambiguous use of variables or identifiers and their associated meanings or definitions. The constraints of the English and Greek alphabets, being finite, frequently lead to the reuse of the same identifiers with varying definitions contingent upon context. This ambiguity can be particularly daunting for those unfamiliar with the subject matter. As the visual representation in Figure \ref{fig:introduction-motivation} illustrates, disambiguating identifiers within mathematical formulas presents a considerable challenge. This is particularly evident when the same variable serves multiple roles, each underpinned by a distinct definition. Such ambiguities become even more problematic for readers not profoundly acquainted with the subject matter, complicating the already demanding task of comprehending each identifier's specific meaning within the context of a complex formula.
+Mathematical formulas, integral to \ac{STEM} papers, often challenge readers due to the ambiguous use of variables or identifiers and their associated meanings or definitions. The constraints of the English and Greek alphabets (being finite) frequently lead to the reuse of the same identifiers with varying definitions contingent upon context. This ambiguity can be particularly daunting for those unfamiliar with the subject matter. As the visual representation in Figure \ref{fig:introduction-motivation} illustrates, disambiguating identifiers within mathematical formulas presents a considerable challenge. This challenge is particularly evident when the same variable serves multiple roles, each underpinned by a distinct definition. Such ambiguities become even more problematic for readers not profoundly acquainted with the subject matter, complicating the already demanding task of comprehending each identifier's specific meaning within the context of a complex formula.
 
 \begin{figure}[htpb]
   \centering
@@ -10,7 +10,8 @@ Mathematical formulas, integral to \ac{STEM} papers, often challenge readers due
   \caption[Challenges in Disambiguation]{Challenges in the Disambiguation of Mathematical Formulas}\label{fig:introduction-motivation}
 \end{figure}
 
-
+%% Comments to Aamin: The arrows from "Average with the condition" and "Random variable for a test input" points "too far left, right?" (x, x and X all still look untagged)
+%% It's also unclear if "itself" makes any difference for "p" and "p"?
 
 \href{https://github.com/wtsnjp/MioGatto/tree/main}{MioGatto} \footnote{\url{https://github.com/wtsnjp/MioGatto/}} \citep{asakura2021miogatto}, a Math Identifier-oriented Grounding Annotation Tool, was conceived to address this issue. However, manually annotating papers to define each identifier is a new challenge. This process is time-consuming and resource-intensive, often requiring a whole day for annotation, depending on the paper's length.
 
@@ -19,7 +20,10 @@ The concept of grounding mathematical formulas \citep{asakura2020towards} offers
 \begin{enumerate}
     \item \textbf{Detecting/Retrieving:} This phase entails the transformation of the \LaTeX \space source into a machine-readable HTML/XML format using \LaTeX ML \footnote{\url{https://math.nist.gov/~BMiller/LaTeXML/}} ~\citep{ginev2011latexml}.
     
-    \item \textbf{Dictionary Generation:} Leveraging \ac{LLMs}, short text clustering techniques will be employed to construct a comprehensive dictionary of all mathematical identifiers as keys with their respective possible descriptions as the values.
+    \item \textbf{Dictionary Generation:} Leveraging \ac{LLMs}, short text clustering techniques will be employed to construct a comprehensive dictionary of all mathematical identifiers as keys with their respective possible descriptions as the corresponding values.
+    
+    %% Question to Aamin. So you can have multiple identical keys x in your dictionary, then?
+    %% One dictionary for each paper?
     
     \item \textbf{Association of Each Occurrence:} This step will involve associating every instance of a mathematical identifier with its corresponding definition, drawing inspiration from MathAlign ~\citep{alexeeva2020mathalign}.
 \end{enumerate}
@@ -34,14 +38,14 @@ Annotating mathematical identifiers in scientific papers is a cornerstone for en
     
     \item \textbf{Accessibility:} The expertise and resources required for manual annotation are not universally available, limiting its reach.
     
-    \item \textbf{Cost Implications:} The adage "time is money" holds here. The extended hours spent on manual annotation translate to increased financial costs.
+    \item \textbf{Cost Implications:} The saying "time is money" holds here. The extended hours spent on manual annotation translate to increased financial costs.
 \end{itemize}
 
 Given these constraints, there is a pressing need for a solution that's both efficient and universally accessible. Automation emerges as a promising alternative, potentially reducing annotation time from days to minutes and democratising access for a wider audience.
 
 However, the path to automation has its challenges. Traditional \ac{NLP} techniques, such as \ac{POS} tagging or the establishment of formal grammar, tend to oversimplify the problem. These methods often provide a generalised solution, covering only a fraction of the diverse challenges presented by mathematical annotations. 
 
-In recent years, LLMs have shown immense promise in various NLP tasks. Their capacity to understand and generate context-rich text suggests they could be pivotal in automating the annotation process, provided they are harnessed effectively.
+In recent years, LLMs have shown immense promise in various NLP tasks. Their capacity to "understand" and generate context-rich text suggests they could be pivotal in automating the annotation process, provided they are used effectively.
 
 \section{Research Questions}
 
@@ -61,16 +65,16 @@ The primary objective of this research is to explore the feasibility and effecti
     \item \textbf{Limitations of Automation:} What are the potential pitfalls or limitations of using LLMs for this automation task?
 \end{enumerate}
 
-These questions provide a comprehensive understanding of the potential and challenges of using LLMs to automate mathematical identifier annotations.
+The answers to these questions provide a comprehensive understanding of the potential and challenges of using LLMs to automate mathematical identifier annotations.
 
 \section{Contributions}
 
-The journey of this research has led to several significant advancements in the realm of automated mathematical identifier annotations. The contributions of this thesis can be enumerated as follows:
+This research has led to several significant advancements in the realm of automated mathematical identifier annotations. The contributions of this thesis can be enumerated as follows:
 
 \begin{enumerate}
     \item \textbf{Integration with MioGatto:} Successfully incorporated GPT-based annotation capabilities into the MioGatto platform, enhancing its potential for automated paper annotations.
     
-    \item \textbf{Extensive Annotations:} Employed a range of LLMs, including GPT-3.5-turbo, GPT-3.5-turbo-16k, GPT-4, \href{https://huggingface.co/TheBloke/Vicuna-33B-1-3-SuperHOT-8K-GPTQ}{vicuna-33b} ~\citep{zheng2023judging} \footnote{\url{https://huggingface.co/TheBloke/Vicuna-33B-1-3-SuperHOT-8K-GPTQ}}, and \href{https://huggingface.co/TheBloke/StableBeluga2-70B-GPTQ}{StableBeluga2} ~\citep{StableBelugaModels, touvron2023llama, mukherjee2023orca} \footnote{\url{https://huggingface.co/TheBloke/StableBeluga2-70B-GPTQ}}, to annotate a curated set of 40 scientific papers. This extensive annotation process serves as a comprehensive evaluation of the capabilities of these models.
+    \item \textbf{Extensive Annotations:} Employed a range of LLMs, including GPT-3.5-turbo~\citep{openai2023}, GPT-3.5-turbo-16k, GPT-4~\citep{2303.08774}, \href{https://huggingface.co/TheBloke/Vicuna-33B-1-3-SuperHOT-8K-GPTQ}{vicuna-33b} ~\citep{zheng2023judging} \footnote{\url{https://huggingface.co/TheBloke/Vicuna-33B-1-3-SuperHOT-8K-GPTQ}}, and \href{https://huggingface.co/TheBloke/StableBeluga2-70B-GPTQ}{StableBeluga2} ~\citep{StableBelugaModels, touvron2023llama, mukherjee2023orca} \footnote{\url{https://huggingface.co/TheBloke/StableBeluga2-70B-GPTQ}}, to annotate a curated set of 40 scientific papers. This extensive annotation process serves as a comprehensive evaluation of the capabilities of these models.
     
     \item \textbf{Performance Evaluation:} Conducted a thorough evaluation and analysis of the annotation performances of GPT, \href{https://huggingface.co/TheBloke/Vicuna-33B-1-3-SuperHOT-8K-GPTQ}{vicuna-33b}, and \href{https://huggingface.co/TheBloke/StableBeluga2-70B-GPTQ}{StableBeluga2} LLMs, providing insights into their strengths and limitations.
     
