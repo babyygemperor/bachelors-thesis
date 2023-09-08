@@ -10,9 +10,6 @@ Mathematical formulas, integral to \ac{STEM} papers, often challenge readers due
   \caption[Challenges in Disambiguation]{Challenges in the Disambiguation of Mathematical Formulas}\label{fig:introduction-motivation}
 \end{figure}
 
-%% Comments to Aamin: The arrows from "Average with the condition" and "Random variable for a test input" points "too far left, right?" (x, x and X all still look untagged)
-%% It's also unclear if "itself" makes any difference for "p" and "p"?
-
 \href{https://github.com/wtsnjp/MioGatto/tree/main}{MioGatto} \footnote{\url{https://github.com/wtsnjp/MioGatto/}} \citep{asakura2021miogatto}, a Math Identifier-oriented Grounding Annotation Tool, was conceived to address this issue. However, manually annotating papers to define each identifier is a new challenge. This process is time-consuming and resource-intensive, often requiring a whole day for annotation, depending on the paper's length.
 
 The concept of grounding mathematical formulas \citep{asakura2020towards} offers a promising solution. By automating this process, we can significantly expedite the annotation process. This thesis adopts a predominantly data-driven approach to develop an automation tool, which we have realised through the following stages:
@@ -21,9 +18,6 @@ The concept of grounding mathematical formulas \citep{asakura2020towards} offers
     \item \textbf{Detecting/Retrieving:} This phase entails the transformation of the \LaTeX \space source into a machine-readable HTML/XML format using \LaTeX ML \footnote{\url{https://math.nist.gov/~BMiller/LaTeXML/}} ~\citep{ginev2011latexml}.
     
     \item \textbf{Dictionary Generation:} Leveraging \ac{LLMs}, short text clustering techniques will be employed to construct a comprehensive dictionary of all mathematical identifiers as keys with their respective possible descriptions as the corresponding values.
-    
-    %% Question to Aamin. So you can have multiple identical keys x in your dictionary, then?
-    %% One dictionary for each paper?
     
     \item \textbf{Association of Each Occurrence:} This step will involve associating every instance of a mathematical identifier with its corresponding definition, drawing inspiration from MathAlign ~\citep{alexeeva2020mathalign}.
 \end{enumerate}
