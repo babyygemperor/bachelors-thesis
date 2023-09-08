@@ -1,1 +1,37 @@
 \chapter{Conclusion}\label{chapter:conclusion}
+
+This thesis explored the potential of automating the annotation of mathematical identifiers in scientific papers using Large Language Models (LLMs) such as GPT-3.5 and GPT-4 from OpenAI, as well as open-source alternatives. The goal was to streamline the process of coreference resolution and formula grounding, traditionally a laborious and expensive task demanding extensive manual effort. 
+
+Our research utilised MioGatto, a Math Identifier-oriented Grounding Annotation Tool, as the base platform for annotation. We developed a method to generate a dictionary of mathematical identifiers and their possible descriptions using LLMs and then associate each instance of an identifier with its appropriate definition based on the given context. 
+
+We evaluated the results using two primary metrics: the CoNLL score, which quantifies the quality of coreference clusters, and semantic accuracy, which measures the correctness of the annotations. The performance of the LLMs was also assessed in terms of the coverage of annotation, the time and cost of annotation, and the variance in scores due to the stochastic nature of LLMs. 
+
+The findings of this study were enlightening. GPT-4 emerged as the most effective model, delivering superior performance regarding the CoNLL score and semantic accuracy. However, it was also the most expensive to operate. GPT-3.5, while not as impressive in its performance, was the most cost-effective and the fastest of the models. 
+
+Interestingly, the open-source model StableBeluga2 demonstrated significant potential. Despite operating on a smaller parameter framework than the GPT models, it delivered performance almost on par with them. This is particularly noteworthy given that StableBeluga2 is designed as an "instruct" model, whereas GPT models are general-purpose chat models not explicitly optimised for formula grounding. 
+
+The other open-source model we evaluated, Vicuna-33b, lagged noticeably behind the GPT models in performance. However, the fact that it could generate any meaningful dictionary and annotations at all indicates the potential of open-source LLMs in this domain. 
+
+Our research also revealed some intriguing insights. For instance, we found no significant correlation between the CoNLL score and semantic accuracy, indicating that these two metrics reflect distinct facets of the paper. We also found that whether a paper was part of the training dataset did not substantially impact the CoNLL score.
+
+The findings of this study have significant implications. They demonstrate the potential of proprietary and open-source LLMs in automating the annotation of mathematical identifiers in scientific papers. This could significantly streamline the process of coreference resolution and formula grounding, making it faster, more cost-effective, and more accessible. 
+
+However, our research also highlights the challenges in this domain. The stochastic nature of LLMs, the complexity of mathematical identifiers and their context, and the lack of a standard measure of semantic accuracy all add to the task's complexity. 
+
+In conclusion, this thesis has significantly contributed to mathematical language processing. It has demonstrated the potential of LLMs in automating the annotation of mathematical identifiers and has laid the groundwork for future research in this domain. However, there is still much work to be done. Future research could explore the use of other LLMs, refine the methods used in this study, and develop more sophisticated measures of semantic accuracy. Despite the challenges, the potential benefits of automating this process are immense, and the progress made in this study is a promising step towards realising this potential.
+
+We addressed the research questions proposed in Chapter 1 throughout this thesis. To provide a cohesive understanding, we will summarise the answers to these questions in the context of our findings:
+
+1. \textbf{Efficacy of LLMs:} Large Language Models (LLMs), specifically GPT-3.5, GPT-3.5-16k, GPT-4, and some open-source LLMs, have proven to be highly effective in generating accurate annotations for mathematical identifiers. GPT-4 emerged as the most effective model, delivering superior performance in both the CoNLL score and semantic accuracy, although it was also the most expensive to operate. GPT-3.5, while not as impressive in its performance, was the most cost-effective and the fastest of the models. The open-source model StableBeluga2 also demonstrated significant potential, delivering performance almost on par with the GPT models.
+
+2. \textbf{Contextual Understanding:} LLMs have shown a substantial ability to disambiguate mathematical identifiers based on context, given the inherent polysemy of these identifiers. This was reflected in the high CoNLL and semantic accuracy scores achieved by the models. However, there was no significant correlation between these two metrics, indicating that they reflect distinct facets of the paper.
+
+3. \textbf{Coverage of Annotation:} LLMs could annotate many papers, with GPT-4 achieving the highest coverage. However, the coverage was not 100\%, indicating room for improvement.
+
+4. \textbf{Accuracy concerning Ground Truth:} The annotations generated by LLMs were highly accurate compared to the ground truth provided by manual annotations. This was reflected in the high semantic accuracy scores achieved by the models. However, manual evaluation of semantic accuracy is a laborious process, and future research could develop more sophisticated measures of semantic accuracy.
+
+5. \textbf{Efficiency:} The automation process using LLMs significantly reduced the time required for annotating scientific papers, and the cost savings were substantial, especially when using GPT-3.5. However, the cost and time efficiency varied between models, with GPT-4 being the most expensive.
+
+6. \textbf{Limitations of Automation:} While LLMs have shown great promise in automating the annotation process, there are limitations. The stochastic nature of LLMs can lead to variability in the results, and the complexity of mathematical identifiers and their context can pose challenges. Furthermore, there is a lack of a standard measure of semantic accuracy, adding to the complexity of evaluating the results.
+
+In conclusion, the research questions posed at the outset of this thesis have been comprehensively addressed, and the findings have demonstrated the immense potential of LLMs in automating the annotation of mathematical identifiers in scientific papers. However, there are still challenges to be overcome and areas for improvement, which provide exciting avenues for future research in this field.
