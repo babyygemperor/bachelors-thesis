@@ -1,13 +1,7 @@
 \chapter{\abstractname}
 
-\textbf{\textit{TODO: KEEP UPDATING ABSTRACT WHILE WRITING}}
+This thesis presents an innovative approach to automating the annotation of mathematical identifiers in scientific papers, a traditionally laborious and costly task. The study leverages \ac{LLMs}, specifically GPT-3.5 and GPT-4 from \citet{openai2023}, and open-source alternative \ac{LLMs}. They are used to generate a dictionary of identifiers and their possible descriptions, and to associate each instance of an identifier with its appropriate definition based on the given context. 
 
+The results are evaluated using two primary metrics: the CoNLL score \citep{pradhan2012conll} which quantifies the quality of coreference clusters, and semantic accuracy which measures the correctness of the annotations. The study reveals that GPT-4 delivers the highest performance in both metrics with a CoNLL Score of 78.08 and semantic correctness of 92.21, although it is also the most expensive. In contrast, GPT-3.5 emerges as the most cost-effective and fastest model. The open-source model StableBeluga2 \citep{StableBelugaModels, touvron2023llama, mukherjee2023orca} also shows significant potential, delivering performance almost on par with the GPT models.
 
-This thesis introduces a novel method for the automated annotation of mathematical identifiers in scientific papers, leveraging \ac{LLMs} such as GPT-3.5 and GPT-4 from OpenAI. The approach addresses the challenges of co-reference resolution and formula grounding, traditionally handled by human annotators through costly and time-intensive procedures. Our study utilises a \ac{MioGatto}, and explores the potential of integrating \ac{POS} tagging and other technologies (like ?) assisting in the process.
-The critical component of this research is developing a procedure for generating a dictionary of mathematical identifiers, contextualising their various meanings, and enabling the language model to select the most accurate definition based on the given context. This method demonstrates the impressive capability of LLMs to disambiguate meanings based on context, a vital task due to the inherently polysemous nature of mathematical identifiers.
-The preliminary results of 82.36 on a \ac{CoNLL} test set  makes our approach a potential game-changer in mathematical text annotation, significantly reducing time and financial costs.
-The findings show the (untapped) potential for using general purpose \ac{LLMs} in specific mathematical language understanding.
-
-%TODO: Acknowledge
-%TODO: Acknowledge supervisors, advisors, family, and friends.
-
+The findings of this study demonstrate the potential of LLMs in automating the annotation of mathematical identifiers, thereby streamlining the process of coreference resolution and formula grounding \citep{asakura2020towards}. Our work lays the ground for future research in this domain, with potential avenues including improving semantic accuracy, expanding model selection, improving annotation coverage, reducing annotation costs, and developing more sophisticated measures of semantic accuracy.
