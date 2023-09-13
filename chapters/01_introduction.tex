@@ -7,7 +7,7 @@ Mathematical formulae, integral to \ac{STEM} papers, often challenge readers due
   \begin{tabular}{c}
     \includegraphics[width=10cm]{images/introduction-motivation.png}
   \end{tabular}
-  \caption[Challenges in Disambiguation]{Challenges in the Disambiguation of Mathematical Formulae}\label{fig:introduction-motivation}
+  \caption[Challenges in Disambiguation]{Challenges in the Disambiguation of Mathematical Formulae \footnote{\url{https://speakerdeck.com/wtsnjp/lrec2022?slide=3}}}\label{fig:introduction-motivation}
 \end{figure}
 
 %% Comments to Aamin: The arrows from "Average with the condition" and "Random variable for a test input" points "too far left, right?" (x, x, and X all still look untagged)
@@ -18,17 +18,17 @@ Mathematical formulae, integral to \ac{STEM} papers, often challenge readers due
 The concept of grounding mathematical formulae \citep{asakura2020towards} offers a promising solution. By automating this process, we can significantly expedite the annotation process. This thesis adopts a predominantly data-driven approach to develop an automation tool, which we have realised through the following stages:
 
 \begin{enumerate}
-    \item \textbf{Detecting/Retrieving:} This phase entails the transformation of the \LaTeX \space source into a machine-readable HTML/XML format using \LaTeX ML \footnote{\url{https://math.nist.gov/~BMiller/LaTeXML/}} ~\citep{ginev2011latexml}.
+    \item \textbf{Pre-processing:} This phase entails the transformation of the \LaTeX \space source into a machine-readable HTML/XML format using \LaTeX ML \footnote{\url{https://math.nist.gov/~BMiller/LaTeXML/}} ~\citep{ginev2011latexml}.
     
-    \item \textbf{Dictionary Generation:} Leveraging \ac{LLMs}, short text clustering techniques will be employed to construct a comprehensive dictionary of all mathematical identifiers as keys with their respective possible descriptions as the corresponding values. Each paper has its dictionary.
+    \item \textbf{Dictionary Generation:} Leveraging Large Language Models (\ac{LLMs}), short text clustering techniques will be employed to construct a comprehensive dictionary of all mathematical identifiers as keys with their respective possible (multiple) descriptions as the corresponding values. Each paper has its dictionary. The exact structure of this dictionary is explained further in Section \ref{sec:dic-generation}.
     
-    \item \textbf{Association of Each Occurrence:} This step will involve associating every instance of a mathematical identifier with its corresponding definition, drawing inspiration from MathAlign ~\citep{alexeeva2020mathalign}.
+    \item \textbf{Association of Each Occurrence:} This step will involve associating every instance of a mathematical identifier with its corresponding definition, based on the dictionary generated. Here we are drawing inspiration from MathAlign ~\citep{alexeeva2020mathalign}.
 \end{enumerate}
 
 
 \section{Motivation and Problem}
 
-Annotating mathematical identifiers in scientific papers is a cornerstone for enhancing comprehension. Traditionally, this task has been performed manually, a method that, while effective, is fraught with challenges:
+Annotations of mathematical identifiers are critical for the comprehension of a formula of the text passage. Annotating mathematical identifiers in scientific papers is a cornerstone for enhancing comprehension. Traditionally, this task has been performed manually, a method that, while effective, is fraught with challenges:
 
 \begin{itemize}
     \item \textbf{Time-Consuming:} Manual annotation is inherently labour-intensive, often requiring hours or even days for a single paper.
@@ -40,7 +40,7 @@ Annotating mathematical identifiers in scientific papers is a cornerstone for en
 
 Given these constraints, there is a pressing need for a solution that's both efficient and universally accessible. Automation emerges as a promising alternative, potentially reducing annotation time from days to minutes and democratising access for a wider audience.
 
-However, the path to automation has its challenges. Traditional \ac{NLP} techniques, such as \ac{POS} tagging or the establishment of formal grammar, tend to oversimplify the problem. These methods often provide a generalised solution, covering only a fraction of the diverse challenges presented by mathematical annotations. 
+However, the path to automation has its challenges. Traditional \ac{NLP} techniques, such as \ac{POS} tagging or the establishment of formal grammar, tend to oversimplify the problem (shown in Section \ref{sec:dic-generation}). These methods often provide a generalised solution, covering only a fraction of the diverse challenges presented by mathematical annotations. 
 
 In recent years, LLMs have shown immense promise in various NLP tasks. Their capacity to "understand" and generate context-rich text suggests they could be pivotal in automating the annotation process, provided they are used effectively.
 
@@ -69,11 +69,11 @@ The answers to these questions provide a comprehensive understanding of the pote
 This research has led to several significant advancements in automated mathematical identifier annotations. The contributions of this thesis can be enumerated as follows:
 
 \begin{enumerate}
-    \item \textbf{Integration with MioGatto:} Successfully incorporated GPT-based annotation capabilities into the MioGatto platform, enhancing its potential for automated paper annotations.
-    
     \item \textbf{Extensive Annotations:} Tested a range of LLMs, including GPT-3.5-turbo~\citep{openai2023}, GPT-3.5-turbo-16k, GPT-4~\citep{2303.08774}, \href{https://huggingface.co/TheBloke/Vicuna-33B-1-3-SuperHOT-8K-GPTQ}{vicuna-33b}\footnote{\url{https://huggingface.co/TheBloke/Vicuna-33B-1-3-SuperHOT-8K-GPTQ}}\citep{zheng2023judging}, and \href{https://huggingface.co/TheBloke/StableBeluga2-70B-GPTQ}{StableBeluga2}\footnote{\url{https://huggingface.co/TheBloke/StableBeluga2-70B-GPTQ}}\citep{StableBelugaModels, touvron2023llama, mukherjee2023orca}, to annotate a curated set of 40 scientific papers. This extensive annotation process serves as a comprehensive evaluation of the capabilities of these models.
     
     \item \textbf{Performance Evaluation:} Conducted a thorough evaluation and analysis of the annotation performances of GPT, \href{https://huggingface.co/TheBloke/Vicuna-33B-1-3-SuperHOT-8K-GPTQ}{vicuna-33b}, and \href{https://huggingface.co/TheBloke/StableBeluga2-70B-GPTQ}{StableBeluga2} LLMs, providing insights into their strengths and limitations.
+    
+    \item \textbf{Integration with MioGatto:} Successfully incorporated GPT-based annotation capabilities into the MioGatto platform, enhancing its potential for automated paper annotations.
     
     \item \textbf{Ground Truth Annotation:} Personally annotated a subset of papers to establish a ground truth, ensuring a reliable benchmark for evaluating the automated annotations.
     
@@ -101,7 +101,7 @@ This thesis is structured to understand the challenges, methodologies, and outco
     
     \item \textbf{\hyperref[chapter:conclusion]{Conclusion:}} This chapter focuses on synthesising the research findings, answering the questions posed at the outset and drawing conclusions on the study's implications and contributions.
     
-    \item \textbf{\hyperref[chapter:future_works]{Future Works:}} The final chapter outlines potential avenues for further exploration and improvement, such as model combinations or the incorporation of emerging techniques.
+    \item \textbf{\hyperref[chapter:future_works]{Future Work:}} The final chapter outlines potential avenues for further exploration and improvement, such as model combinations or the incorporation of emerging techniques.
     
     
 \end{enumerate}

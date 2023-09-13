@@ -1,6 +1,6 @@
 \chapter{Methodology}\label{chapter:methods}
 
-This chapter describes the methodology employed in this research, encompassing three core stages: 1) detection and retrieval of mathematical identifiers, 2) dictionary construction, and 3) association of individual IDs to description (annotation) instances.
+This chapter describes the methodology employed in this research, encompassing three core stages: 1) pre-processing of mathematical identifiers, 2) dictionary construction, and 3) association of individual IDs to description (annotation) instances.
 The process uses \LaTeX ML utilities and explores the capabilities of \ac{LLMs} to automate the annotation of mathematical identifiers. Here, we present the transitions from source materials to machine-readable formats and from dictionary formulation to final annotation. The entire code is available at \url{https://github.com/babyygemperor/grounding-of-formulae}.
 
 Before delving into the specifics, it is crucial to understand the structure of \\ MioGatto\footnote{\url{https://github.com/wtsnjp/MioGatto/}} \citep{asakura2021miogatto}, the tool we aim to automate. MioGatto contains three core files: 
@@ -39,7 +39,7 @@ Section \ref{sec:dic-generation} covers the generation of \texttt{mcdict.json}, 
   \caption[LaTeXML Preprocessing]{Dictionary and Annotation Files of MioGatto}\label{fig:miogatto-data}
 \end{figure}
 
-\section{Identifier Detection and Retrieval}\label{sec:pre-processing}
+\section{Pre-processing}\label{sec:pre-processing}
 
 Initially, we considered parsing the \LaTeX \space code directly via GPT-based LLMs, owing to their frequent training on \LaTeX \space documents. \LaTeX \space has a more decent semantic layer to mathematical identifiers than ASCII Math and offers efficiency in token usage and complexity compared to MathML. To illustrate the effectiveness of different encodings, Table \ref{fig:ascii-math} displays various representations of identical formulae, comparing \LaTeX, ASCII Math, and MathML (XML) regarding readability and token count.
 
