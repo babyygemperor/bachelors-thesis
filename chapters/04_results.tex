@@ -46,7 +46,7 @@ Another critical aspect of this research was to examine how much of the paper th
 \end{table}
 
 \subsection{Semantic Accuracy}
-Semantic accuracy provides a measure of the correctness of the annotations. We weighted it against the coverage to represent the total. Because of the extensive difficulty of manually reviewing semantic accuracy, we evaluated five carefully picked papers representing various low/high CoNLL scores and lengths. As shown in Table \ref{tab:semantic-accuracy}, GPT-4 again outperformed all the models by a significant margin. There was one instance where GPT-4 achieved an astonishing 100\% semantic accuracy (GPT-3.5: 96.15\%).
+Semantic accuracy provides a measure of the correctness of the annotations. We weighted it against the coverage to represent the total. Because of the extensive difficulty of manually reviewing semantic accuracy, we evaluated six carefully picked papers representing various low/high CoNLL scores and lengths. As shown in Table \ref{tab:semantic-accuracy}, GPT-4 again outperformed all the models by a significant margin. There was one instance where GPT-4 achieved an astonishing 100\% semantic accuracy (GPT-3.5: 96.15\%).
 %% How many instances are in those papers?
 %% What are some comparable numbers reported by older/non-GPT studies?
 
@@ -75,9 +75,9 @@ Given the inherent stochastic nature of these models, some variation can be expe
     \hline
     Model & Best & Worst & Mean & Median & Std. Deviation \\
     \hline
-    gpt (average) & 86.75 & 83.21 & \textbf{84.58} & 84.18 & 1.55 \\
-    gpt-3.5-turbo & 82.83 & 80.00 & 81.28 & 81.15 & 1.17 \\
-    gpt-3.5-turbo-16k & 88.38 & 83.47 & \textbf{85.29} & 84.65 & 2.16 \\
+    gpt (average) & 86.75 & 83.21 & 84.58 & 84.18 & 1.55 \\
+    gpt-3.5-turbo & 82.83 & 80.00 & 81.28 & 81.15 & \textbf{1.17} \\
+    gpt-3.5-turbo-16k & 88.38 & 83.47 & 85.29 & 84.65 & 2.16 \\
     \textbf{gpt-4} & \textbf{89.05} & \textbf{86.16} & \textbf{87.18} & \textbf{86.75} & 1.32 \\
     \hline
   \end{tabular}
@@ -87,7 +87,7 @@ Given the inherent stochastic nature of these models, some variation can be expe
 
 \subsection{Running Time and Costs}
 
-The cost and time efficiency of the employed models are critical to the feasibility of our automated approach. Tables \ref{tab:time} and \ref{tab:cost} respectively present the average time required and average cost incurred in annotating mathematical identifiers across GPT versions. The pricing is listed on the OpenAI website\footnote{\url{https://openai.com/pricing}}. While GPT-3.5 emerged as the fastest and most time-efficient model, the GPT-4 version manifested as the most costly. The relative cost per concept is described in Table~\ref{tab:relative-cost}.
+The cost and time efficiency of the employed models are critical to the feasibility of our automated approach. Tables \ref{tab:time} and \ref{tab:cost} respectively present the average time required and average cost incurred in annotating mathematical identifiers across GPT versions. The pricing is listed on the OpenAI website\footnote{\url{https://openai.com/pricing}}. While GPT-3.5 emerged as the fastest and most time-efficient model, the GPT-4 version manifested as the most costly. Table~\ref{tab:relative-cost} describes the relative cost per concept.
 
 \begin{table}[htpb]
   \centering
@@ -96,7 +96,7 @@ The cost and time efficiency of the employed models are critical to the feasibil
     Model & Dictionary Generation Time & Annotation Time & Total Time \\
     \hline
     gpt (average) & 03:49 & 03:25 & 07:14 \\
-    gpt-3.5-turbo & 02:00 & \textbf{02:47} & \textbf{04:48} \\
+    gpt-3.5-turbo & 02:00 & 02:47 & \textbf{04:48} \\
     gpt-3.5-turbo-16k & 08:07 & \textbf{02:45} & 10:52 \\
     gpt-4 & \textbf{01:19} & 04:43 & 06:03 \\
     \hline
@@ -109,7 +109,7 @@ The cost and time efficiency of the employed models are critical to the feasibil
   \centering
   \begin{tabular}{lrr}
     \hline
-    Model & Cost & Cost / 1M Tokens \\
+    Model & Cost & Cost / 1M Input Tokens \\
     \hline
     gpt (average) & 1.80 & 9.415 \\
     \textbf{gpt-3.5-turbo} & \textbf{0.30} & \textbf{1.525} \\
@@ -125,7 +125,7 @@ The cost and time efficiency of the employed models are critical to the feasibil
   \centering
   \begin{tabular}{lrr}
     \hline
-    Model & Cost / 1000 Concepts (USD) & Time / Concept (seconds) \\
+    Model & Cost / 1000 Annotations (USD) & Time / Annotation (seconds) \\
     \hline
     gpt (average) & 2.49 & 0.73\\
     \textbf{gpt-3.5-turbo} & \textbf{0.40} & \textbf{0.46} \\
@@ -139,7 +139,7 @@ The cost and time efficiency of the employed models are critical to the feasibil
 
 
 \section{Open Source LLMs}
-Upon successfully using GPT to automate formula grounding, we proceeded to do the same using Open Source Models instead. We applied the same metrics to see how they compete. The results were again impressive. Due to open-source LLMs' relatively slow speed (i.e. high run-time costs), we selected a subset of 7 of the original 40 papers by \citet{asakura2022building}. We carefully chose the papers to cover a range of attributes, including high/low CoNLL scores, high/low semantic accuracy, and short/long papers.
+Upon successfully using GPT to achieve formula grounding, we proceeded to do the same using Open Source Models instead. We applied the same metrics to see how they compete. The results were again impressive. Due to open-source LLMs' relatively slow speed (i.e. high run-time costs), we selected a subset of 7 of the original 40 papers by \citet{asakura2022building}. We carefully chose the papers to cover a range of attributes, including high/low CoNLL scores, high/low semantic accuracy, and short/long papers.
 
 \subsection{CoNLL Score}
 We applied the same metrics of CoNLL score to the seven selected papers annotated by Open Source LLMs. We compared them against those annotated by GPT, with the human-annotated versions serving as the reference/ground truth. Table \ref{tab:open-source-conll-score} shows the respective values. Among the open-source models, StableBeluga2 matched the performance of GPT models, indicating its ability to create high-quality coreference clusters. Vicuna-33b failed to annotate one paper entirely, so it has a score of 0 for that paper.
@@ -233,7 +233,7 @@ Given the distinctive operational requirements of open-source models, the comput
   \centering
   \begin{tabular}{lrrr}
     \hline
-    Model & Cost & Cost / 1000 Concepts (USD) & Time / Concept (sec) \\
+    Model & Cost & Cost / 1000 Annotations (USD) & Time / Annotation (sec) \\
     \hline
     vicuna-33b & \textbf{0.14} & 0.51 & 2.73 \\
     gpt (average) & 1.80 & 2.70 & 1.06 \\

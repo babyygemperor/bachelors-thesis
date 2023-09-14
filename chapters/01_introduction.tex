@@ -13,7 +13,7 @@ Mathematical formulae, integral to \ac{STEM} papers, often challenge readers due
 %% Comments to Aamin: The arrows from "Average with the condition" and "Random variable for a test input" points "too far left, right?" (x, x, and X all still look untagged)
 %% It is also unclear if "itself" makes any difference for "p" and "p"?
 
-\href{https://github.com/wtsnjp/MioGatto/tree/main}{MioGatto} \footnote{\url{https://github.com/wtsnjp/MioGatto/}} \citep{asakura2021miogatto}, a Math Identifier-oriented Grounding Annotation Tool, was conceived to address this issue. However, manually annotating papers to define each identifier is a new challenge. This process is time-consuming and resource-intensive, often requiring a whole day for annotation, depending on the paper's length.
+\href{https://github.com/wtsnjp/MioGatto/tree/main}{MioGatto} \footnote{\url{https://github.com/wtsnjp/MioGatto/}} \citep{asakura2021miogatto}, a Math Identifier-oriented Grounding Annotation Tool, was conceived to address this issue. However, this tool relies on the manual annotation of papers. Moreover, manually annotating papers to define each identifier is a new challenge. This process is time-consuming and resource-intensive, often requiring a whole day for annotation, depending on the paper's length.
 
 The concept of grounding mathematical formulae \citep{asakura2020towards} offers a promising solution. By automating this process, we can significantly expedite the annotation process. This thesis adopts a predominantly data-driven approach to develop an automation tool, which we have realised through the following stages:
 
@@ -22,13 +22,13 @@ The concept of grounding mathematical formulae \citep{asakura2020towards} offers
     
     \item \textbf{Dictionary Generation:} Leveraging Large Language Models (\ac{LLMs}), short text clustering techniques will be employed to construct a comprehensive dictionary of all mathematical identifiers as keys with their respective possible (multiple) descriptions as the corresponding values. Each paper has its dictionary. The exact structure of this dictionary is explained further in Section \ref{sec:dic-generation}.
     
-    \item \textbf{Association of Each Occurrence:} This step will involve associating every instance of a mathematical identifier with its corresponding definition, based on the dictionary generated. Here we are drawing inspiration from MathAlign ~\citep{alexeeva2020mathalign}.
+    \item \textbf{Association of Each Occurrence:} This step will involve associating every instance of a mathematical identifier with its corresponding definition based on the dictionary generated. Here we are drawing inspiration from MathAlign ~\citep{alexeeva2020mathalign}.
 \end{enumerate}
 
 
 \section{Motivation and Problem}
 
-Annotations of mathematical identifiers are critical for the comprehension of a formula of the text passage. Annotating mathematical identifiers in scientific papers is a cornerstone for enhancing comprehension. Traditionally, this task has been performed manually, a method that, while effective, is fraught with challenges:
+Annotations of mathematical identifiers are critical for comprehending a formula or the text passage. Annotating mathematical identifiers in scientific papers is a cornerstone for enhancing comprehension. Traditionally, this task has been performed manually, a method that, while effective, is fraught with challenges:
 
 \begin{itemize}
     \item \textbf{Time-Consuming:} Manual annotation is inherently labour-intensive, often requiring hours or even days for a single paper.
@@ -77,7 +77,7 @@ This research has led to several significant advancements in automated mathemati
     
     \item \textbf{Ground Truth Annotation:} Personally annotated a subset of papers to establish a ground truth, ensuring a reliable benchmark for evaluating the automated annotations.
     
-    \item \textbf{CoNLL Score Approximation:} Developed a novel formula to approximate the expected CoNLL ~\citep{pradhan2012conll} score of a paper when annotated using GPT, offering a predictive tool for assessing annotation quality.
+    \item \textbf{CoNLL Score Approximation:} Developed a novel formula to approximate the expected CoNLL ~\citep{pradhan2012conll} score of a paper when annotated using GPT, offering a predictive tool for assessing coreference quality.
 \end{enumerate}
 
 %% Random Question from Rune: To what extent have the LLMs used in this research already been trained on the 40 papers and the existing annotation test sets for these 40 papers?
@@ -93,7 +93,7 @@ This thesis is structured to understand the challenges, methodologies, and outco
     
     \item \textbf{\hyperref[chapter:related_work]{Related Work:}} While the concept explored in this thesis is novel, this chapter delves into the limited existing literature that shares thematic similarities, providing a backdrop against which the current research can be compared.
     
-    \item \textbf{\hyperref[chapter:methods]{Methods:}} This chapter summarises the journey of methodological exploration. It begins with initial attempts using traditional techniques like parts of speech tagging. Next, it transitions into the more successful GPT strategies, detailing the various prompts and markers employed to optimise the results.
+    \item \textbf{\hyperref[chapter:methods]{Methods:}} This chapter summarises the journey of methodological exploration. It begins with initial attempts using traditional techniques like \ac{POS} tagging. Next, it transitions into the more successful LLM strategies, detailing the various prompts and markers employed to optimise the results.
     
     \item \textbf{\hyperref[chapter:results]{Results:}} Here, the empirical outcomes of the research are presented. The chapter summarises the scores achieved by each LLM, the methodologies used to derive these scores, and the rationale behind selecting the specific methods.
     
@@ -107,4 +107,3 @@ This thesis is structured to understand the challenges, methodologies, and outco
 \end{enumerate}
 
 This structure provides a logical flow, guiding readers from the foundational concepts to the conclusions, and offers a holistic understanding of the research journey.
-

@@ -10,6 +10,22 @@ This chapter contains all the information that we deemed to be not crucial for t
   basicstyle=\ttfamily
 }
 
+\section{Definitions}
+\label{app:definitions}
+
+\begin{definition}[Token]
+\label{def:token}
+A token is an instance of a sequence of characters in some particular document that are grouped together as a useful semantic unit for processing. \footnote{\url{https://nlp.stanford.edu/IR-book/html/htmledition/tokenization-1.html}}
+\end{definition}
+
+\begin{definition}[Prompt]
+\label{def:prompt}
+A prompt is a question, statement, or request that is input into an AI system to elicit a specific response or output.\footnotemark
+\end{definition}
+\footnotetext{\href{https://dev.to/avinashvagh/understanding-the-concept-of-natural-language-processing-nlp-and-prompt-engineering-35hg}{https://dev.to/avinashvagh/understanding-the-concept-of-natural-language-processing-} \\ \href{https://dev.to/avinashvagh/understanding-the-concept-of-natural-language-processing-nlp-and-prompt-engineering-35hg}{nlp-and-prompt-engineering-35hg}}
+
+
+
 \section{XML Encoding Example}
 This section shows the complicated formatting of XML which renders it as an unsuitable type for input to \ac{LLMs}.
 
@@ -50,15 +66,16 @@ The XML encoding is as follows:
 \end{verbatim}
 
 \subsection{Ampere's Circuit Law}
-
+%% Rune: Maybe show a "readable" (Math) example of the Circuit Law here?
+%% Problems with ∮ (80), ∘(88, 137),  
 \label{app:xml_ampere}
 
-The XML encoding is as follows:
-\begin{verbatim}
+The XML encoding of $\oint_C {Bd\ell = \mu _0 I_C }$ is as follows:
+\begin{lstlisting}
 <math>
   <mrow>
     <msub>
-      <mo movablelimits="false">∮</mo>
+      <mo movablelimits="false">$∮$</mo>
       <mi>C</mi>
     </msub>
     <mover>
@@ -130,4 +147,4 @@ The XML encoding is as follows:
     </mrow>
   </mrow>
 </math>
-\end{verbatim}
+\end{lstlisting}
