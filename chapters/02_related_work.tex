@@ -1,6 +1,6 @@
 \chapter{Related Work}\label{chapter:related_work}
 
-Mathematical Language Processing (MLP) is a burgeoning area of research, focusing on the complexities of understanding, annotating, and disambiguating mathematical text. This chapter critically reviews seminal papers that have significantly influenced this domain, contextualising our current study.
+The field of Mathematical Language Processing (MLP) has been progressively evolving, focusing on the complexities of understanding, annotating, and disambiguating mathematical text. This chapter critically reviews key papers that have significantly influenced this domain, thereby contextualising our current study.
 
 \section{Understanding Mathematical Text and Formulae}
 
@@ -8,7 +8,7 @@ The early work by \citet{grigore2009towards} is a foundational study in mathemat
 
 Building upon this, the MLP project by \citet{pagael2014mathematical} introduced a novel approach employing \ac{POS} tag-based distances to estimate the probabilities of identifier-definition relationships. This approach provided a more nuanced understanding of mathematical identifiers than traditional pattern-matching techniques. However, it still relied on manual intervention for accurate results. In contrast, our approach automates this process using LLMs, eliminating the need for manual intervention and significantly reducing the time and cost of annotation.
 
-Most recently, \citet{meadows2022survey} extended the discourse by advocating using transformer models like GPT for formula retrieval. Meadows emphasised the role of informal mathematical text in quantitative reasoning, opening the door for more automated approaches. Unlike our study, Meadows' research focuses not on annotation automation but on formula retrieval.
+Most recently, \citet{meadows2022survey} supported using transformer models like GPT for formula retrieval. Meadows emphasised the role of informal mathematical text in quantitative reasoning, allowing more automated approaches. Unlike our study, Meadows' research focuses not on annotation automation but on formula retrieval.
 
 \section{Foundational Frameworks and Automation}
 
@@ -18,14 +18,14 @@ The pioneering work by \citet{asakura2020towards} introduced MioGatto, a cutting
 
 Another noteworthy contribution to Mathematical Language Processing is the work by \citet{alexeeva2020mathalign}. This study proposes a rule-based approach for extracting mathematical identifiers and linking them to their in-text descriptions. The domain-agnostic approach operates directly on PDFs, requiring only the location of the formula of interest. While their rule-based method offers a structured way to link identifiers to their descriptions, it does not employ LLMs or focus on coreference resolution among mathematical identifiers, a central theme in our research.
 
-Their work also presents a novel evaluation dataset and the tool used to create it. Unlike our approach, which leverages the capabilities of LLMs like GPT-3.5 and GPT-4 for automating the annotation process, their method relies on rule-based algorithms. This makes their approach less flexible in handling the complexities and ambiguities often found in mathematical text. Moreover, their study does not delve into their method's cost-effectiveness or time efficiency, aspects that we consider in our research to evaluate the practical applicability of automated annotation methods. While both works aim to automate the process of annotating mathematical identifiers, our study extends the scope by employing LLMs and focusing on coreference resolution and semantic accuracy.
+Their work also presents a novel evaluation dataset and the tool used to create it. Unlike our approach, which leverages the capabilities of LLMs for automating the annotation process, their method relies on rule-based algorithms. This makes their approach less flexible in handling the complexities and ambiguities often found in mathematical text. Moreover, their study does not delve into their method's cost or time effectiveness aspects that we consider in our research to evaluate the practical applicability of automated annotation methods. While both works aim to automate the process of annotating mathematical identifiers, our study extends the scope by employing LLMs and focusing on coreference resolution and semantic accuracy.
 
 
-\section{The Role of Large Language Models (LLMs) and Pre-trained Frameworks}
+\section{The Role of LLMs and Pre-trained Frameworks}
 
-The advent of pre-trained models like "MathBERT" \citep{peng2021mathbert} and the evaluation of GPT-3.5 \citep{he2023annollm} mark significant milestones. MathBERT is fine-tuned for decoding mathematical formulae and emphasises the importance of context. However, it is not designed for annotating mathematical identifiers, which is the primary focus of our study.
+The advent of pre-trained models like "MathBERT" \citep{peng2021mathbert} and the evaluation of GPT-3.5 \citep{he2023annollm} mark significant milestones. MathBERT is fine-tuned for decoding mathematical formulae and emphasises the importance of context. However, it is not designed for annotating mathematical identifiers, our primary focus.
 
-The research on GPT-3.5 evaluates its efficacy as a robust annotator and questions its potential to replace traditional crowdsourced methods. While this work aligns closely with our study, it does not provide a comprehensive evaluation using metrics like CoNLL or semantic accuracy, which are central to our research, nor does it tie it to mathematical text.
+The research on GPT-3.5 evaluates its efficacy as a robust annotator and questions its potential to replace traditional crowdsourced methods. While this work aligns closely with our study, it does not use metrics like CoNLL or semantic accuracy, which are central to our research, nor does it tie it to mathematical text.
 
 \section{Summary}
 

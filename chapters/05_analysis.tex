@@ -13,7 +13,7 @@ The CoNLL score measures the quality of coreference clusters, employing a weight
   \begin{tabular}{c}
   \includegraphics[width=14cm]{images/conll-score.png}
   \end{tabular}
-  \caption[Distribution of CoNLL Score]{Violin plot of CoNLL scores for all three GPT models}\label{fig:violin-conll}
+  \caption[Distribution of CoNLL Score]{Violin plot illustrating the disparity in CoNLL scores across three GPT models revealing that GPT-4 outperforms its counterparts in quality of coreference clusters, exhibiting higher and more consistent scores.}\label{fig:violin-conll}
 \end{figure}
 
 \subsection{Estimation of CoNLL Score}
@@ -65,7 +65,7 @@ Figure \ref{fig:esimated-conll} shows the visualisation of our novel formula on 
   \includegraphics[width=11cm]{images/estimated-conll-2.png}
   \end{tabular}
   }
-  \caption[CoNLL Score Estimation]{3D Visualisation of the CoNLL Score Estimation Formula}\label{fig:esimated-conll}
+  \caption[CoNLL Score Estimation]{3D visualisation of the CoNLL Score Estimation Formula based on the intercept, the total\_concepts, and the occur\_iqr, providing a quick and efficient method to predict the actual CoNLL score.}\label{fig:esimated-conll}
 \end{figure}
 
 
@@ -94,7 +94,7 @@ Figure~\ref{fig:violin-coverage} provides a visual representation of the coverag
   \begin{tabular}{c}
   \includegraphics[width=14cm]{images/coverage.png}
   \end{tabular}
-  \caption[Distribution of Coverage]{Violin plot of the Coverage of Annotations for all three GPT models}\label{fig:violin-coverage}
+  \caption[Distribution of Coverage]{Violin plot depicting the coverage of annotations for each GPT model. GPT-4 represents the highest proportion of the paper annotated successfully and consistently, with GPT-3.5 scoring less.}\label{fig:violin-coverage}
 \end{figure}
  
 \subsection{Semantic Accuracy}
@@ -106,7 +106,7 @@ Semantic accuracy provides a measure of the correctness of the annotations. We w
   \begin{tabular}{c}
   \includegraphics[width=14cm]{images/semantic-accuracy.png}
   \end{tabular}
-  \caption[Semantic Accuracy]{Violin plot of the Weighted Semantic Accuracy of all GPT Models}\label{fig:violin-semantic}
+  \caption[Semantic Accuracy]{Violin plot showing the weighted semantic accuracy of all GPT Models. GPT-4 significantly outperforms others with even its worst performance matching GPT-3.5 and GPT-3.5-16K's best.}\label{fig:violin-semantic}
 \end{figure}
 
 \subsection{Variance of the Results Data}
@@ -118,7 +118,7 @@ To account for these models' stochastic nature and measure our experiment's repr
   \begin{tabular}{c}
   \includegraphics[width=14cm]{images/variance-conll.png}
   \end{tabular}
-  \caption[The variance]{Violin plot of the variance in CoNLL scores for the same paper annotated four times}\label{fig:violin-variance}
+  \caption[The variance]{Violin plot capturing the variance in CoNLL scores for the same paper annotated four times highlighting the stability of GPT-3.5 and GPT-4 and the relative volatility of GPT-3.5-16K.}\label{fig:violin-variance}
 \end{figure}
 
 \subsection{Running Time and Costs}
@@ -143,7 +143,7 @@ GPT-3.5 emerged as the most cost-effective and time-efficient option among the G
   \includegraphics[width=10cm]{images/time-gpt.png}
   \end{tabular}
   }
-  \caption[Cost Analysis]{Cost and Time Usage of Annotations}\label{fig:gpt-cost-anal}
+  \caption[Cost Analysis]{Visualisation of the average costs and durations for the GPT models annotation underlining how the paper's length influences both the cost and the time needed, offering a crucial glimpse into economical dynamics of the models.}\label{fig:gpt-cost-anal}
 \end{figure}
 
 \begin{figure}[htpb]
@@ -161,7 +161,7 @@ GPT-3.5 emerged as the most cost-effective and time-efficient option among the G
   \includegraphics[width=10cm]{images/gpt-relative-time.png}
   \end{tabular}
   }
-  \caption[Time Cost Analysis]{Cost and Time Usage of Automation}\label{fig:gpt-relative-cost}
+  \caption[Time Cost Analysis]{Visualisation of the standardised comparison, presenting the costs and durations normalised per 1,000 annotations  showcasing the trade-off between cost and efficiency of models.}\label{fig:gpt-relative-cost}
 \end{figure}
 
 \begin{figure}[htpb]
@@ -169,7 +169,7 @@ GPT-3.5 emerged as the most cost-effective and time-efficient option among the G
   \begin{tabular}{c}
   \includegraphics[width=14cm]{images/gpt-time-v-cost.png}
   \end{tabular}
-  \caption[Cost vs Time]{Scatter Plot of Average Cost vs Time Taken}\label{fig:gpt-time-v-cost}
+  \caption[Cost vs Time]{Scatter plot illustrating the relationship between average cost and time taken indicating that while GPT-3.5 is the most cost-effective and time-efficient, GPT-4 incurs the highest expenses due to elevated token costs and GPT-3.5-16K exhibits instability, leading to increased running time.}\label{fig:gpt-time-v-cost}
 \end{figure}
 
 
@@ -188,7 +188,7 @@ Vicuna-33b struggled in several cases, even scoring zero in one instance, hintin
   \begin{tabular}{c}
   \includegraphics[width=14cm]{images/open-conll-score.png}
   \end{tabular}
-  \caption[CoNLL Score Open Source]{Violin Plot of the CoNLL scores using all 5 models}\label{fig:open-source-conll}
+  \caption[CoNLL Score Open Source]{Violin plot of the CoNLL scores for GPT models and open-source models. Vicuna-33b struggles in several instances compared to StableBeluga2, which demonstrates the performance almost comparable to GPT models.}\label{fig:open-source-conll}
 \end{figure}
 
 \subsection{Coverage of Annotation}
@@ -200,7 +200,7 @@ Once again, vicuna-33b faced challenges in providing complete coverage for one p
   \begin{tabular}{c}
   \includegraphics[width=14cm]{images/open-coverage.png}
   \end{tabular}
-  \caption[Open Source Coverage]{Violin plot of the coverage of the 7 papers annotated}\label{fig:open-coverage}
+  \caption[Open Source Coverage]{Violin plot of the coverage of seven selected papers annotated by open-source and GPT models. Vicuna-33b has noticeably lower coverage than others, while StableBeluga2 performed almost on par with GPT models.}\label{fig:open-coverage}
 \end{figure}
 
 \subsection{Semantic Accuracy}
@@ -212,7 +212,7 @@ Semantic accuracy is the cornerstone of our comparative study. Due to the labour
   \begin{tabular}{c}
   \includegraphics[width=14cm]{images/open-semantic.png}
   \end{tabular}
-  \caption[Semantic Accuracy]{Semantic Accuracy Scores from all the five models on six papers}\label{fig:open-semantic}
+  \caption[Semantic Accuracy]{Violin plot of Semantic Accuracy Scores for open-source and GPT models on selected six papers. While StableBeluga2 outperformed GPT-3.5, it fell short of surpassing GPT-4. Vicuna-33b lagged noticeably.}\label{fig:open-semantic}
 \end{figure}
 
 \subsection{Running Time and Costs}
@@ -225,7 +225,7 @@ The computation of time and cost differ between open-source and GPT models. Unli
   \begin{tabular}{c}
   \includegraphics[width=14cm]{images/open-runtime.png}
   \end{tabular}
-  \caption[Open Source Time]{Average Time Taken by all five models on seven papers}\label{fig:open-runtime}
+  \caption[Open Source Time]{Bar plot of average duration of the annotation process for open-source and GPT models. Due to slow hardware, the average run time of open-source LLMs was worse, especially noticeable for StableBeluga2.}\label{fig:open-runtime}
 \end{figure}
 
 \begin{figure}[htpb]
@@ -233,7 +233,7 @@ The computation of time and cost differ between open-source and GPT models. Unli
   \begin{tabular}{c}
   \includegraphics[width=14cm]{images/open-anno-cost.png}
   \end{tabular}
-  \caption[Open Source Cost]{Average Time Taken Per Annotation by all five models on seven papers}\label{fig:open-relative-cost}
+  \caption[Open Source Cost]{Bar plot of average time cost per annotation for open-source and GPT models. The cost of open-source models depends on availability of GPUs. As per our experiments, costs for GPT-4 were higher due to elevated token costs.}\label{fig:open-relative-cost}
 \end{figure}
 
 \begin{figure}[htpb]
@@ -241,7 +241,7 @@ The computation of time and cost differ between open-source and GPT models. Unli
   \begin{tabular}{c}
   \includegraphics[width=14cm]{images/open-cost.png}
   \end{tabular}
-  \caption[Open Source Time]{Average Paid Cost by all five models on seven papers}\label{fig:open-cost}
+  \caption[Open Source Time]{Bar plot of average costs for annotation by all five models. GPT-4 represented the highest costs while remaining models, including open-source ones, cost less on an average.}\label{fig:open-cost}
 \end{figure}
 
 \section{Evaluating Potential Correlations}
@@ -292,5 +292,5 @@ In comprehensive terms, GPT-4 emerged as the most impressive model due to its su
   \includegraphics[width=10cm]{images/semantic-cost.png}
   \end{tabular}
   }
-  \caption[Cost Analysis]{Cost and Time Usage of Automation}\label{fig:total-anal}
+  \caption[Cost Analysis]{Scatter plots of the Total Time Taken and Total Cost (USD) vs. Semantic Accuracy for all five LLMs. GPT-4, despite its high costs, emerged as the most impressive model due to its superior performance while GPT-3.5 turned out to be the most cost-effective and fastest model to operate.}\label{fig:total-anal}
 \end{figure}
