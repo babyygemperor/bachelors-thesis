@@ -32,7 +32,7 @@ This section shows the complicated formatting of XML which renders it as an unsu
 \subsection{Quadratic Equation}
 \label{app:xml_quadratic}
 
-The XML encoding is as follows:
+The XML encoding of $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$ is as follows:
 \begin{verbatim}
 <math display="block" style="display:block math;">
   <mrow>
@@ -66,16 +66,17 @@ The XML encoding is as follows:
 \end{verbatim}
 
 \subsection{Ampere's Circuit Law}
-%% Rune: Maybe show a "readable" (Math) example of the Circuit Law here?
-%% Problems with ∮ (80), ∘(88, 137),  
 \label{app:xml_ampere}
 
-The XML encoding of $\oint_C {Bd\ell = \mu _0 I_C }$ is as follows:
-\begin{lstlisting}
+The XML encoding of 
+$ \oint_C \vec{B}.d\vec{\ell} = \mu_0 (I_{enc} 
++ \epsilon_0 \frac{d}{d_t}  {\int_S \vec{E}.\hat{n} \, da ) }$
+is as follows:
+\begin{verbatim}
 <math>
   <mrow>
     <msub>
-      <mo movablelimits="false">$∮$</mo>
+      <mo movablelimits="false">∮</mo>
       <mi>C</mi>
     </msub>
     <mover>
@@ -147,4 +148,4 @@ The XML encoding of $\oint_C {Bd\ell = \mu _0 I_C }$ is as follows:
     </mrow>
   </mrow>
 </math>
-\end{lstlisting}
+\end{verbatim}
