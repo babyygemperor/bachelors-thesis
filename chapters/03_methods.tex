@@ -79,7 +79,7 @@ latexmlc --preload=[nobibtex,ids,mathlexemes,localrawstyles]latexml.sty
      --dest=<output HTML file> <input TeX file>
 \end{lstlisting}
 
-While this format conveys less information than \LaTeX, the robust capabilities of LLMs compensate for this limitation, yielding comparable results. After the HTML generation, MioGatto's pre-processing tool runs to create a template for the dictionary and annotations
+While this format conveys less information than \LaTeX, the robust capabilities of LLMs compensate for this limitation, yielding comparable results. After the HTML generation, MioGatto's pre-processing tool runs to create a template for the dictionary and annotations with the following command: 
   \begin{lstlisting}[language=bash]
     python -m tools.preprocess <HTML file>
   \end{lstlisting}
@@ -182,7 +182,7 @@ While seemingly effective for cases like these, this pattern only works for some
   \caption[Response from Main Prompt for Dictionary Generation]{Response JSON from GPT using the prompt for dictionary generation containing the keys as the mathematical identifiers and the values as their possible respective definitions.}\label{fig:dic_response}
 \end{figure}
 
-This complexity led to exploring the capabilities of Large Language Models (LLMs) like GPT-3.5 from OpenAI. While LLMs were generally designed as chat models and not specifically for mathematical text or dictionary generation, preliminary trials proved promising. Upon feeding a paragraph of text to the model through OpenAI's API, it returned a well-formatted dictionary (Figure \ref{fig:dic_response}) that was highly usable for annotation. However, an obstacle emerged that the model's context window is limited. Most of the papers we tested were (at least) 20-40 thousand tokens long, and the context window of the LLMs is not big enough to accommodate this (see Table~\ref{tab:token_counts}).
+This complexity led to exploring the capabilities of \ac{LLMs} like GPT-3.5 from OpenAI. While LLMs were generally designed as chat models and not specifically for mathematical text or dictionary generation, preliminary trials proved promising. Upon feeding a paragraph of text to the model through OpenAI's API, it returned a well-formatted dictionary (Figure \ref{fig:dic_response}) that was highly usable for annotation. However, an obstacle emerged that the model's context window is limited. Most of the papers we tested were (at least) 20-40 thousand tokens long, and the context window of the LLMs is not big enough to accommodate this (see Table~\ref{tab:token_counts}).
 %% Better text? "20-40 thousand tokens" or "20k-40k tokens"
 %% Rune: Define Tokens as roughly equivalent to the Number of Words. 
 
@@ -342,7 +342,7 @@ The CoNLL score serves as a standard quantitative measure for evaluating the qua
   \begin{minipage}{\textwidth}
     \centering
     \includegraphics[width=14cm]{images/coreference.png}
-    \caption[Example for coreference]{Example of Coreference Clustering \citep{asakura2022building}\footnotemark}
+    \caption[Example for coreference]{Example of Coreference Clustering where "Bob" and "he" are one entity \citep{asakura2022building}\footnotemark}
     \label{fig:coreference}
   \end{minipage}
 \end{figure}
